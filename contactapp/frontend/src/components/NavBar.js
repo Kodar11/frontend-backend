@@ -12,18 +12,18 @@ const NavBar = ({ token, setToken }) => {
   };
 
   return (
-    <nav className="bg-indigo-600 p-4 shadow-lg">
+    <nav className="bg-white p-4 shadow-lg border-b border-orange-500">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-xl font-semibold">
+        <Link to="/" className="text-orange-600 text-xl font-semibold">
           Contact Manager
         </Link>
         <div>
           {!token ? (
             <>
-              <Link to="/login" className="text-white px-4 py-2 hover:bg-indigo-500 rounded-md">
+              <Link to="/login" className="text-gray-700 px-4 py-2 hover:bg-orange-100 rounded-md">
                 Login
               </Link>
-              <Link to="/register" className="text-white px-4 py-2 hover:bg-indigo-500 rounded-md">
+              <Link to="/register" className="text-gray-700 px-4 py-2 hover:bg-orange-100 rounded-md">
                 Register
               </Link>
             </>

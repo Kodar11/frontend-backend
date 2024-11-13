@@ -110,122 +110,111 @@ function Contacts({ token }) {
   };
 
   return (
-    <div className="container mx-auto mt-10 px-4">
-  <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
-    <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-      {editingContactId ? "Edit Contact" : "Add Contact"}
-    </h2>
+    <div className="container mx-auto mt-10 px-4 bg-white">
+      <div className="max-w-2xl mx-auto bg-orange-100 shadow-lg rounded-lg p-8">
+        <h2 className="text-3xl font-bold text-orange-600 mb-8 text-center">
+          {editingContactId ? "Edit Contact" : "Add Contact"}
+        </h2>
 
-    <form onSubmit={editingContactId ? handleUpdateContact : handleAddContact}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="John Doe"
-            className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-            value={newContact.name}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Phone
-          </label>
-          <input
-            type="text"
-            name="phone"
-            placeholder="(123) 456-7890"
-            className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-            value={newContact.phone}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="john.doe@example.com"
-            className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-            value={newContact.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Address
-          </label>
-          <input
-            type="text"
-            name="address"
-            placeholder="123 Main St"
-            className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-            value={newContact.address}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-      </div>
-
-      <div className="mt-8 text-center">
-        <button
-          type="submit"
-          className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-500 transition duration-200"
-        >
-          {editingContactId ? "Update Contact" : "Add Contact"}
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <div className="mt-16 max-w-4xl mx-auto px-4">
-    <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
-      Your Contacts
-    </h2>
-
-    <div className="bg-white shadow-lg rounded-lg p-6">
-      <ul>
-        {contacts.map((contact) => (
-          <li
-            key={contact.id}
-            className="border-b border-gray-200 py-6 flex justify-between items-center"
-          >
+        <form onSubmit={editingContactId ? handleUpdateContact : handleAddContact}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <p className="text-lg font-semibold text-gray-900">{contact.name}</p>
-              <p className="text-gray-700">{contact.phone}</p>
-              <p className="text-gray-700">{contact.email}</p>
-              <p className="text-gray-700">{contact.address}</p>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="John Doe"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-200 bg-white text-gray-800"
+                value={newContact.name}
+                onChange={handleInputChange}
+                required
+              />
             </div>
-            <div className="flex space-x-4">
-              <button
-                onClick={() => handleEditContact(contact)}
-                className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-400 transition duration-200 flex items-center"
-              >
-                <span className="material-icons">edit</span>
-              </button>
-              <button
-                onClick={() => handleDeleteContact(contact.id)}
-                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-200 flex items-center"
-              >
-                <span className="material-icons">delete</span>
-              </button>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+              <input
+                type="text"
+                name="phone"
+                placeholder="(123) 456-7890"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-200 bg-white text-gray-800"
+                value={newContact.phone}
+                onChange={handleInputChange}
+                required
+              />
             </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-</div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="john.doe@example.com"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-200 bg-white text-gray-800"
+                value={newContact.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Address</label>
+              <input
+                type="text"
+                name="address"
+                placeholder="123 Main St"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-200 bg-white text-gray-800"
+                value={newContact.address}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
 
+          <div className="mt-8 text-center">
+            <button
+              type="submit"
+              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-500 transition duration-200"
+            >
+              {editingContactId ? "Update Contact" : "Add Contact"}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div className="mt-16 max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl font-semibold text-orange-600 mb-4 text-center">Your Contacts</h2>
+
+        <div className="bg-orange-100 shadow-lg rounded-lg p-6">
+          <ul>
+            {contacts.map((contact) => (
+              <li
+                key={contact.id}
+                className="border-b border-gray-300 py-6 flex justify-between items-center"
+              >
+                <div>
+                  <p className="text-lg font-semibold text-gray-800">{contact.name}</p>
+                  <p className="text-gray-600">{contact.phone}</p>
+                  <p className="text-gray-600">{contact.email}</p>
+                  <p className="text-gray-600">{contact.address}</p>
+                </div>
+                <div className="flex space-x-4">
+                  <button
+                    onClick={() => handleEditContact(contact)}
+                    className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-400 transition duration-200 flex items-center"
+                  >
+                    <span className="material-icons">edit</span>
+                  </button>
+                  <button
+                    onClick={() => handleDeleteContact(contact.id)}
+                    className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-200 flex items-center"
+                  >
+                    <span className="material-icons">delete</span>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
 

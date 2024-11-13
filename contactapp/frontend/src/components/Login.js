@@ -25,62 +25,61 @@ function Login({ setToken }) {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-indigo-100">
-  <div className="max-w-lg w-full bg-white shadow-lg rounded-3xl p-10">
-    <h2 className="text-4xl font-extrabold text-center text-indigo-700 mb-8">Welcome Back</h2>
+        <div className="flex items-center justify-center min-h-screen bg-white">
+            <div className="max-w-lg w-full bg-white shadow-lg rounded-3xl p-10">
+                <h2 className="text-4xl font-extrabold text-orange-600 text-center mb-8">Welcome Back</h2>
 
-    {error && (
-      <div className="bg-red-200 text-red-800 px-4 py-3 rounded-md mb-6 text-center">
-        {error}
-      </div>
-    )}
+                {error && (
+                    <div className="bg-red-600 text-white px-4 py-3 rounded-md mb-6 text-center">
+                        {error}
+                    </div>
+                )}
 
-    <form onSubmit={handleSubmit}>
-      <div className="mb-6">
-        <label className="block text-sm font-semibold text-gray-600">Email Address</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-6">
+                        <label className="block text-sm font-semibold text-gray-700">Email Address</label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-200 bg-gray-100 text-gray-800"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </div>
 
-      <div className="mb-8">
-        <label className="block text-sm font-semibold text-gray-600">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-          className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
+                    <div className="mb-8">
+                        <label className="block text-sm font-semibold text-gray-700">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 transition duration-200 bg-gray-100 text-gray-800"
+                            value={formData.password}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </div>
 
-      <button
-        type="submit"
-        className="w-full bg-indigo-600 text-white py-3 rounded-lg font-bold hover:bg-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition duration-200"
-      >
-        Sign In
-      </button>
-    </form>
+                    <button
+                        type="submit"
+                        className="w-full bg-orange-600 text-white py-3 rounded-lg font-bold hover:bg-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-400 transition duration-200"
+                    >
+                        Sign In
+                    </button>
+                </form>
 
-    <div className="text-center mt-6">
-      <p className="text-gray-600">
-        New here?{" "}
-        <a href="/register" className="text-indigo-600 font-semibold hover:text-indigo-800 transition duration-200">
-          Create an account
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-
+                <div className="text-center mt-6">
+                    <p className="text-gray-700">
+                        New here?{" "}
+                        <a href="/register" className="text-orange-600 font-semibold hover:text-orange-500 transition duration-200">
+                            Create an account
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
     );
 }
 

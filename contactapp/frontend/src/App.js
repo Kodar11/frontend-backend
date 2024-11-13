@@ -10,19 +10,16 @@ function App() {
 
   return (
     <Router>
-      <div className="bg-gray-100 min-h-screen">
         {/* Add the NavBar component */}
         <NavBar token={token} setToken={setToken} />
 
-        <div className="pt-8">
           <Routes>
             <Route path="/" element={<Navigate to="/login" />} /> {/* Redirect to login */}
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/contacts" element={<Contacts token={token} />} />
           </Routes>
-        </div>
-      </div>
+      
     </Router>
   );
 }
